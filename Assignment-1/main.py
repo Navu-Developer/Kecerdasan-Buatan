@@ -26,12 +26,18 @@ def main():
             enter = input("press ENTER to continue ... ")
         elif choose == "2":
             for i in range(2):
-                nama = str(input("nama ke-{}".format(i+1)))
+                nama = str(input("nama ke-{} ".format(i+1)))
+                gp.setNama(nama)
             addMore = str(input("ingin menambah nama lagi? (Y/n) -> "))
             if addMore == "Y" or "y":
                 howMuch = int(input("berapa banyak -> "))
                 for i in range(howMuch):
-                    nama = str(input("nama ke-{}".format(i+1)))
+                    nama = str(input("nama ke-{} ".format(i+1)))
+                    gp.setNama(nama)
+            elif addMore == "N" or "n":
+                pass
+            else:
+                pass
             enter = input("press ENTER to continue ... ")
         elif choose == "3":
             print("==Daftar Nama==")
@@ -75,8 +81,6 @@ def main():
             gp.setNama('Budi')
             gp.setNama('Yayuk')
             gp.setNama('Joni')
-
-            print(gp.getNama())
             gp.setRelation('Joko', 'Susi')
             gp.setRelation('Joko', 'Budi')
             gp.setRelation('Susi', 'Joko')
@@ -91,9 +95,8 @@ def main():
             gp.setRelation('Yayuk', 'Joni')
             gp.setRelation('Joni', 'Susi')
             gp.setRelation('Joni', 'Yayuk')
-            print(gp.getRelation())
 
-            enter = input("press ENTER to continue ... ")
+            enter = input("Tugas Selesai, press ENTER to continue ... ")
 
         elif choose == "0":
             keepRun += 1
